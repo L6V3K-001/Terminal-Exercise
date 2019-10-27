@@ -1,0 +1,92 @@
+#include <iostream>
+
+void AskNamePass();
+void MenuOptions();
+
+int main()
+{
+	AskNamePass();
+	MenuOptions();
+
+	return 0;
+}
+
+void AskNamePass()
+{
+
+	std::cout << "Welcome to the terminal. V1.5.2657" << std::endl;
+
+	const std::string Username = "2";
+	std::string UsernameInput = "";
+
+	const std::string Password = "123";
+	std::string PasswordInput = "";
+
+	do
+	{
+		std::cout << "Enter your username > " << std::flush;
+		std::cin >> UsernameInput;
+		std::cout << "Enter your password > " << std::flush;
+		std::cin >> PasswordInput;
+
+		if ((UsernameInput == Username) && (PasswordInput == Password))
+		{
+			break;
+			
+		}
+		else
+		{
+			std::cout << "Acess denied." << std::endl;
+		}
+
+	} while (true);
+	
+	std::cout << "Loading 17%\nLoading 49%\nLoading 72%\nLoading 72%\nDone.\n";
+	std::cout << "Welcome agent " << Username << std::endl;
+
+	return;
+}
+
+void MenuOptions()
+{
+	std::cout << "\n1  Army Confidential files." << std::endl;
+	std::cout << "\n2  Government Confidential files." << std::endl;
+	std::cout << "\n3  NASA Confidential files." << std::endl;
+	std::cout << "\n4  Project PME.explorer. " << std::endl;
+
+	int MenuEntry = 0;
+
+	do
+	{
+		std::cout << "Your Entry > " << std::flush;
+		std::cin >> MenuEntry;
+
+		if ((MenuEntry >= 5) || (MenuEntry <= 0))
+		{
+			std::cout << "\nInvalid Operation" << std::endl;
+		}
+		else
+		{
+			break;
+		}
+
+	} while (true);
+
+	switch (MenuEntry)
+	{
+	case 1:
+		std::cout << "\nOpening ArmyConf.files..." << std::endl;
+		break;
+	case 2:
+		std::cout << "\nOpening GovConf.files..." << std::endl;
+		break;
+	case 3:
+		std::cout << "\nOpening NASAConf.files..." << std::endl;
+		break;
+	case 4:
+		std::cout << "\nStarting PME.explorer..." << std::endl;
+		break;
+	}
+
+	return;
+}
